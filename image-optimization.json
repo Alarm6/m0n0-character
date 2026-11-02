@@ -1,0 +1,52 @@
+{
+  "before": 28362356,
+  "after": 3221446,
+  "reductionPercent": 89,
+  "files": [
+    {
+      "file": "character-day-real.webp",
+      "before": 3011643,
+      "after": 323254
+    },
+    {
+      "file": "character-garden-real.webp",
+      "before": 3440836,
+      "after": 400590
+    },
+    {
+      "file": "character-night-real.webp",
+      "before": 2796385,
+      "after": 290224
+    },
+    {
+      "file": "character-tower-real.webp",
+      "before": 2452859,
+      "after": 178958
+    },
+    {
+      "file": "tour-aerial.webp",
+      "before": 3895564,
+      "after": 501092
+    },
+    {
+      "file": "tour-clouds.webp",
+      "before": 1984592,
+      "after": 196558
+    },
+    {
+      "file": "tour-landscape.webp",
+      "before": 3841896,
+      "after": 504220
+    },
+    {
+      "file": "tour-parking.webp",
+      "before": 3398374,
+      "after": 389874
+    },
+    {
+      "file": "tour-playground.webp",
+      "before": 3540207,
+      "after": 436676
+    }
+  ]
+}

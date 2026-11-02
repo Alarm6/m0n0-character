@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+const path='dist/index.html';let h=fs.readFileSync(path,'utf8');
+const before=h;h=h.replace(/<section class="gallery section" id="gallery">[\s\S]*?<\/section>\s*/,'');
+if(h===before)throw Error('Gallery section not found');
+h=h.replace('06 / МОСКВА','05 / МОСКВА').replace('07 / ВАШ НОВЫЙ ХАРАКТЕР','06 / ВАШ НОВЫЙ ХАРАКТЕР');
+h=h.replace('Интерактивная карта Москвы — OpenStreetMap','Интерактивная карта Москвы — Яндекс Карты').replace('https://www.openstreetmap.org/export/embed.html?bbox=37.56%2C55.71%2C37.64%2C55.76&amp;layer=mapnik','https://yandex.ru/map-widget/v1/?ll=37.600000%2C55.735000&amp;z=13&amp;l=map&amp;lang=ru_RU');
+h=h.replace('МОСКВА / OPENSTREETMAP','МОСКВА / ЯНДЕКС КАРТЫ').replace('https://www.openstreetmap.org/#map=14/55.7350/37.6000','https://yandex.ru/maps/213/moscow/?ll=37.600000%2C55.735000&amp;z=13').replace('Открыть большую карту','Открыть в Яндекс Картах');
+h=h.replace('app.js?v=16','app.js?v=17');
+h=h.replace(/<dialog id="imageDialog">[\s\S]*?<\/dialog>/,'');
+fs.writeFileSync(path,h);
+let js=fs.readFileSync('dist/app.js','utf8');
+js=js.split('\n').filter(line=>!line.startsWith('const gallery=')&&!line.startsWith('const places={park:')).join('\n');
+fs.writeFileSync('dist/app.js',js);
